@@ -20,8 +20,8 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.zhuji.route.BottomTabBarRoute
+import com.example.zhuji.ui.theme.green2
 import com.example.zhuji.ui.theme.grey3
-import com.example.zhuji.ui.theme.white
 
 
 /**
@@ -38,7 +38,7 @@ fun BottomTabBar(navHostController: NavHostController, selectIndex:Int, onItemSe
     )
 
     BottomNavigation(
-        modifier = Modifier.height(45.dp)
+        modifier = Modifier.height(68.dp)
     ) {
         val navBackStackEntry by navHostController.currentBackStackEntryAsState()
         val currentDestination = navBackStackEntry?.destination
@@ -46,7 +46,7 @@ fun BottomTabBar(navHostController: NavHostController, selectIndex:Int, onItemSe
             BottomNavigationItem(
                 modifier = Modifier
                     .background(MaterialTheme.colors.primary)
-                    .offset(y = 5.dp),
+                    .offset(y = 6.dp),
                 icon = {
                     var iconRes = painterResource(id = screen.iconUnSelected)
                     if(selectIndex == index){
@@ -54,13 +54,13 @@ fun BottomTabBar(navHostController: NavHostController, selectIndex:Int, onItemSe
                     }
                     Image(painter = iconRes,
                         contentDescription = null,
-                        modifier = Modifier.height(20.dp),
+                        modifier = Modifier.height(48.dp),
                     )
                 },
                 label = {
                     var textColor = grey3
                     if (selectIndex == index)
-                        textColor = white
+                        textColor = green2
                     Text(text = stringResource(screen.stringId),
                         fontSize = 12.sp,
                         color = textColor

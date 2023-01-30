@@ -34,9 +34,9 @@ val grey2 = Color(0xFFCCC7BF)
 val grey3 = Color(0xFF767676)
 val grey4 = Color(0xFFB2B2B2)
 val grey5 = Color(0xFF5E5E5E)
-val green1 = Color(0xFFB0EB6E)
-val green2 = Color(0xFF6DB476)
-val green3 = Color(0xFF67BF63)
+val green1 = Color(0xEDF3EB)
+val green2 = Color(0xFF67967B)
+val green3 = Color(0xFF5F9378)
 val red = Color(0xFFFF0000)
 val red1 = Color(0xFFDF5554)
 val red2 = Color(0xFFDD302E)
@@ -53,15 +53,15 @@ val warn = Color(0xFFD87831)
 
 // 主题颜色自行搭配,想整好看点就慢慢搭配,好好搭配
 fun appDarkColors(
-    primary:Color = Color(0xffa9a9a9),
+    primary:Color = Color(0xFF67967B),
     primaryVariant: Color = Color(0xffa9a9a9),
     secondary: Color = Color(0xffd3d3d3),
     secondaryVariant: Color = Color(0xffd3d3d3),
     background: Color = Color(0xfff5f5f5),
-    surface: Color = Color(0xFF232323),
+    surface: Color = Color(0xFF67967B),//
     error: Color = Color(0xFFB00020),
     onPrimary: Color = Color(0xffffffff),
-    onSecondary: Color = Color(0xFF3A3A3A),
+    onSecondary: Color = Color(0xFF67967B),//
     onBackground: Color = Color(0xfff5f5f5),
     onSurface: Color = Color(0xffffffff),
     onError: Color = Color(0xFFB00020),
@@ -84,7 +84,7 @@ fun appDarkColors(
 
 
 fun appLightColors(
-    primary:Color = Color(0xff272a36),
+    primary:Color = Color(0xFFEDF3EB),
     primaryVariant: Color = Color(0xff272a36),
     secondary: Color = Color(0xff000000),
     secondaryVariant: Color = Color(0xff000000),
