@@ -1,46 +1,35 @@
 package com.example.zhuji
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.zhuji.ui.theme.ZHUJITheme
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.material.MaterialTheme
+import androidx.compose.ui.ExperimentalComposeUiApi
+import androidx.compose.ui.graphics.toArgb
+import com.example.zhuji.base.BaseActivity
+import com.example.zhuji.ui.common.MainScaffoldConfig
+import com.example.zhuji.ui.theme.AppTheme
+import com.example.zhuji.ui.theme.themeState
+import com.example.zhuji.utils.DialogUtil
+import com.google.accompanist.pager.ExperimentalPagerApi
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainActivity : ComponentActivity() {
+@AndroidEntryPoint
+class MainActivity : BaseActivity() {
+
+    @OptIn(
+        ExperimentalFoundationApi::class,
+        ExperimentalComposeUiApi::class,
+        ExperimentalPagerApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ZHUJITheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
+            DialogUtil.initDialog(this)
+            AppTheme(themeKey = themeState.value) {
+                //根据主题颜色设置状态栏背景颜色
+                setStatusBarColor(MaterialTheme.colors.primary.toArgb())
+                MainScaffoldConfig()
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ZHUJITheme {
-        Greeting("Android")
     }
 }

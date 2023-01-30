@@ -2,6 +2,9 @@ pluginManagement {
     repositories {
         google()
         mavenCentral()
+        //github部分资源需要
+        //1.xpopup
+        maven { url "https://jitpack.io" }
         gradlePluginPortal()
     }
 }
@@ -10,7 +13,11 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        //github部分资源需要
+        //1.xpopup
+        maven { url "https://jitpack.io" }
     }
 }
 rootProject.name = "ZHUJI"
 include ':app'
+

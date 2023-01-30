@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ZHUJI</string>
+
+    <string name="bottom_bar_home">首页</string>
+    <string name="bottom_bar_community">社区</string>
+    <string name="bottom_bar_journey">旅途</string>
+    <string name="bottom_bar_mine">我的</string>
 </resources>
